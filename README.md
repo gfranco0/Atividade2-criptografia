@@ -1,5 +1,9 @@
 # Criptografia Simples em C
 
+Integrantes do grupo:
+Joaquim Martins Ferreira Neto RGM: 47609630
+Gabriel Franco RGM: 47451289
+
 ## objetivo
 
 esse trabalho foi feito para a disciplina de Algoritmo e Pensamento Computacional. a ideia é criar um programa simples em linguagem C que criptografa uma palavra usando a cifra de cesar e uma sequencia matematica.
