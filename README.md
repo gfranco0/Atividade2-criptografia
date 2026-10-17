@@ -4,37 +4,35 @@ Integrantes do grupo:
 Joaquim Martins Ferreira Neto RGM: 47609630
 Gabriel Franco RGM: 47451289
 
-## objetivo
+## Objetivo
 
-esse trabalho foi feito para a disciplina de Algoritmo e Pensamento Computacional. a ideia é criar um programa simples em linguagem C que criptografa uma palavra usando a cifra de cesar e uma sequencia matematica.
+Este trabalho foi feito para a disciplina de Algoritmo e Pensamento Computacional. A ideia é criar um programa simples em linguagem C que criptografa uma palavra usando a Cifra de César e uma sequência matemática.
 
-A palavra escolhida pelo grupo é **Abacate**, o SHIFT usado é **3** e a sequencia escolhida foi Fibonacci.
+A palavra escolhida pelo grupo foi **Paschoal**, o SHIFT usado foi **6** e a sequência escolhida foi a **Progressão Aritmética (PA)**.
 
-## como funciona
+## Como funciona
 
-O programa usa duas camadas de criptografia
+O programa usa duas camadas de criptografia aplicadas em conjunto:
 
-### 1. Cifra de Cesar
+### 1. Cifra de César
+Na primeira camada, o programa desloca cada letra da palavra por um valor fixo de **6 posições** para frente no alfabeto.
 
-na primeira camada o programa muda cada letra 3 posições para frente no alfabeto. por exemplo a letra A vira D e a letra B vira E
+### 2. Progressão Aritmética (PA)
+Na segunda camada, o programa aplica um deslocamento dinâmico baseado na posição ordinal de cada letra na palavra. A sequência da PA utilizada é:
 
-### 2. Sequencia de Fibonacci
+`1, 2, 3, 4, 5, 6, 7, 8`
 
-na segunda camada o programa usa os numeros da sequencia de Fibonacci para deslocar as letras novamente. a sequencia usada é:
+Cada termo da sequência corresponde à posição da letra na palavra. O deslocamento total final de cada caractere é a soma do SHIFT fixo com o termo da PA (`6 + n`).
 
-`1, 1, 2, 3, 5, 8, 13`
+## Como executar
 
-Cada numero é usado na posição correspondente da palavra. assim cada letra pode ter um deslocamento diferente
-
-## como executar
-
-1. Tenha um compilador C instalado, como o GCC
-2. Salve o codigo com o nome `atividade_abacate_fibonacci.c`
-3. Abra o terminal na pasta onde o arquivo foi salvo
+1. Tenha um compilador C instalado, como o GCC.
+2. Salve o código com o nome `criptografia_pa.c`.
+3. Abra o terminal na pasta onde o arquivo foi salvo.
 4. Compile o programa com o comando:
 
 ```bash
-gcc atividade_abacate_fibonacci.c -o atividade
+gcc criptografia_pa.c -o criptografia
 ```
 ## arquivo de resultado
 
@@ -42,4 +40,4 @@ quando o programa é executado ele tenta salvar o resultado no arquivo `resultad
 
 ## conclusão
 
-com esse trabalho conseguimos praticar alguns conceitos de C como variaveis, laços de repetição, condições e gravação em arquivos. também aprendemos como usar uma sequencia matematica junto com uma cifra simples para mudar uma palavra
+com este trabalho conseguimos praticar conceitos fundamentais da linguagem C, como variáveis, laços de repetição (for), condições (if/else), manipulação de caracteres e gravação de arquivos, também compreendemos como unir conceitos de matemática aplicada com criptografia simples
