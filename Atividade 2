@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char palavra[] = "Paschoal";
+    char palavra_cifrada[9];
+    int shift = 6;
+    int tamanho = strlen(palavra);
+
+    for (int i = 0; i < tamanho; i++) {
+        char c = palavra[i];
+        int n = i + 1;
+        int termo_pa = n;
+        int deslocamento_total = shift + termo_pa;
+
+        if (isupper(c)) {
+            palavra_cifrada[i] = 'A' + ((c - 'A' + deslocamento_total) % 26);
+        } else if (islower(c)) {
+            palavra_cifrada[i] = 'a' + ((c - 'a' + deslocamento_total) % 26);
+        } else {
+            palavra_cifrada[i] = c;
+        }
+    }
+    palavra_cifrada[tamanho] = '\0';
+
+    printf("Palavra original: %s\n", palavra);
+    printf("SHIFT: %d\n", shift);
+    printf("Sequencia: PA\n");
+    printf("Palavra criptografada: %s\n", palavra_cifrada);
+
+    FILE *arquivo = fopen("resultado_criptografia.txt", "w");
+    if (arquivo == NULL) {
+        printf("Erro ao criar o arquivo de saida!\n");
+        return 1;
+    }
+
+    fprintf(arquivo, "Palavra codificada: %s| SHIFT: %d | Tipo: 1 | Letras: %d\n", 
+            palavra_cifrada, shift, tamanho);
+    
+    fclose(arquivo);
+
+    return 0;
+}
